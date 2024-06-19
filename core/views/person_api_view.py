@@ -7,5 +7,14 @@ from rest_framework import generics
 
 class PersonListAPIView(generics.ListCreateAPIView):
     queryset = Persona.objects.all()
-    serializer_class = PersonaSerializer    
+    serializer_class = PersonaSerializer   
+
+class PersonUpdateAPIView(generics.RetrieveUpdateAPIView):
+    queryset = Persona.objects.all()
+    serializer_class = PersonaSerializer
+
+class PersonDestroyAPIView(generics.RetrieveDestroyAPIView):
+    queryset = Persona.objects.all()
+    serializer_class = PersonaSerializer
+
 
