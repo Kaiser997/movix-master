@@ -3,9 +3,10 @@ from core.models import Carro
 from core.serializer import PersonaSerializer
 
 class CarroSerializer(serializers.ModelSerializer):
-    persona = PersonaSerializer()
+    persona = PersonaSerializer(required=False)
+    persona_id=serializers.IntegerField(required=False)
 
     class Meta:
         model = Carro
         fields = ['marca', 'modelo',
-        'placa', 'saldo', 'persona']
+        'placa', 'saldo', 'persona', 'persona_id']
